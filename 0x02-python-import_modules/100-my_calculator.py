@@ -24,14 +24,14 @@ def for_mul():
 def for_div():
     a = int(sys.argv[1])
     b = int(sys.argv[3])
-    print("{} - {} = {}".format(a, b, div(a, b)))
+    print("{} / {} = {}".format(a, b, div(a, b)))
 
 
 def main():
     if (len(sys.argv) - 1) < 3:
         print("Usage: ./100-my_calculator.py <a> <operator> <b>")
         exit(1)
-    elif sys.argv[2] not in ["+", "-", "*", "/"]:
+    elif sys.argv[2] not in ['+', '-', '*', '/']:
         print("Unknown operator. Available operators: +, -, * and /")
         exit(1)
     elif sys.argv[2] == "+":
@@ -40,8 +40,11 @@ def main():
         for_min()
     elif sys.argv[2] == "*":
         for_mul()
+    elif sys.argv[2] == "/":
+        for_div()
     else:
-        for_mul()
+        print("Unknown operator. Available operators: +, -, * and /")
+        exit(1)
 
 
 if __name__ == "__main__":
