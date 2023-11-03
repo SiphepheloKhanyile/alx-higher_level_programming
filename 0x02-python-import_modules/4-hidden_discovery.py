@@ -1,3 +1,6 @@
 #!/usr/bin/python3
+import hidden_4
 if __name__ == "__main__":
-    from hidden_4 import *
+    for a in dir(hidden_4):
+        if ("__" not in a):
+            print("{}".format(a))
