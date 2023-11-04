@@ -7,7 +7,8 @@ def add_tuple(tuple_a=(), tuple_b=()):
         else:
             a = 0 + tuple_b[0]
             b = 0 + tuple_b[1]
-        return (a, b)
+        tuple_r = (int(a), int(b))
+        return tuple_r
     elif len(tuple_b) < 2:
         if len(tuple_b) >= 1:
             a = tuple_b[0] + tuple_a[0]
@@ -15,8 +16,10 @@ def add_tuple(tuple_a=(), tuple_b=()):
         else:
             a = 0 + tuple_a[0]
             b = 0 + tuple_a[1]
-        return (a, b)
+        tuple_r = (int(a), int(b))
+        return tuple_r
     else:
         a = tuple_a[0] + tuple_b[0]
         b = tuple_a[1] + tuple_b[1]
-        return (a, b)
+        tuple_r = (int(a), int(b))
+        return tuple_r
