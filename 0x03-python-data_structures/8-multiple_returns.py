@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 def multiple_returns(sentence):
-    if len(sentence) == 0:
-        return None
+    if len(sentence) != 0:
+        char = sentence[0]
     else:
-        return_t = (len(sentence), sentence[0])
-        return return_t
+        char = None
+    return (len(sentence), char)
