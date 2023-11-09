@@ -4,7 +4,6 @@ def best_score(a_dictionary):
         return None
     else:
         biggest = 0
-        key = ""
         for x, y in a_dictionary.items():
             if y > biggest:
                 biggest = y
