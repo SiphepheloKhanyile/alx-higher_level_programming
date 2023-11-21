@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/usr/bin/python2
 def list_division(my_list_1, my_list_2, list_length):
     new_list = []
     result = 0
@@ -6,6 +6,7 @@ def list_division(my_list_1, my_list_2, list_length):
     while (count < list_length):
         try:
             result = my_list_1[count] / my_list_2[count]
+            new_list.append(result)
         except IndexError:
             result = 0
             new_list.append(result)
@@ -18,7 +19,5 @@ def list_division(my_list_1, my_list_2, list_length):
             result = 0
             new_list.append(result)
             print("wrong type")
-        else:
-            new_list.append(result)
         count += 1
     return (new_list)
