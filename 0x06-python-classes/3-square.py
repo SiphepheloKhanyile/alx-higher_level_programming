@@ -1,4 +1,4 @@
-#!/usr/bin/pythhon3
+#!/usr/bin/python3
 """continuation module for a class that defines a sqaure"""
 
 
