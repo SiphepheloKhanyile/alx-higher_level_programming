@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Continuation of a module that defines Square class"""
+"""continuation of Square class module"""
 
 
 class Square():
