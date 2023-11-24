@@ -10,8 +10,8 @@ class Square():
             size(int): size of square, deafualt = 0
             position(tuple): optional positional arguement
         """
-        self.__size = size
-        self.__position = position
+        self.size = size
+        self.position = position
 
     @property
     def size(self):
@@ -49,8 +49,12 @@ class Square():
         if (self.__size == 0):
             print("")
             return
-        [print("") for i in range(0, self.__position[1])]
-        for i in range(0, self.__size):
-            [print(" ", end="") for j in range(0, self.__position[0])]
-            [print("#", end="") for k in range(0, self.__size)]
-            print("")
+        else:
+            for a in range(self.__position[1]):
+                print("")
+            for b in range(self.__size):
+                for c in range(self.__position[0]):
+                    print(" ", end="")
+                for d in range(self.__size):
+                    print("#", end="")
+                print("")
