@@ -3,7 +3,13 @@
 
 
 class Rectangle:
+    """Class that deines a square, initial value set to default 0"""
     def __init__(self, width=0, height=0):
+        """Intitialising object
+        Args:
+            width (int): width of rectangle
+            height (int): height of rectangle
+        """
         self.width = width
         self.height = height
 
