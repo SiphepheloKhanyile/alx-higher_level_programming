@@ -16,5 +16,5 @@ def is_same_class(obj, a_class):
     """
     if (isinstance(type(obj).__name__, a_class) is True):
         return True
-    if (isinstance(type(obj).__name__, a_class) is False):
+    else:
         return False
