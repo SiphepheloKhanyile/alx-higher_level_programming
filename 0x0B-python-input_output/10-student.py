@@ -22,7 +22,7 @@ class Student:
         retrieves a dictionary representation of Student instance
         """
         dct = {}
-        if(isinstance(attrs, list) and
+        if (isinstance(attrs, list) and
                 all(isinstance(element, str) for element in attrs)):
             for keys in attrs:
                 for item, value in self.__dict__.items():
@@ -34,5 +34,3 @@ class Student:
                 if (isinstance(value, (list, dict, str, int, bool))):
                     dct[key] = value
             return dct
-
-
