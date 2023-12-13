@@ -111,3 +111,8 @@ class Rectangle(Base):
                 print("#", end="")
                 count += 1
             print("")
+
+    def __str__(self):
+        return "[{}] ({}) {}/{} - {}/{}".format(
+                type(self).__name__, self.id, self.__x, self.__y,
+                self.__width, self.__height)
