@@ -28,6 +28,10 @@ class Rectangle(Base):
             raise TypeError("x must be an integer")
         if (isinstance(y, int) is False):
             raise TypeError("y must be an integer")
+        if (width <= 0):
+            raise ValueError("width must be > 0")
+        if (height <= 0):
+            raise ValueError("height must be > 0")
         if (x < 0):
             raise ValueError("x must be >= 0")
         if (y < 0):
@@ -52,6 +56,7 @@ class Rectangle(Base):
 
     @property
     def height(self):
+        """getter and setter fot height"""
         return (self.__height)
 
     @height.setter
@@ -64,6 +69,7 @@ class Rectangle(Base):
 
     @property
     def x(self):
+        """getter and setter fot x"""
         return (self.__x)
 
     @x.setter
@@ -80,6 +86,7 @@ class Rectangle(Base):
 
     @y.setter
     def y(self, value):
+        """getter and setter fot y"""
         if (isinstance(value, int) is False):
             raise TypeError("y must be an integer")
         if (value < 0):
