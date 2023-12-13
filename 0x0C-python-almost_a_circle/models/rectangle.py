@@ -105,8 +105,16 @@ class Rectangle(Base):
         """
         prints in stdout the Rectangle instance with the char '#'
         """
+        y_count = 0
+        while(y_count < self.__y):
+            print("")
+            y_count += 1
         for row in range(0, self.__height):
             count = 0
+            x_count = 0
+            while (x_count < self.__x):
+                print(" ", end="")
+                x_count += 1
             while (count < self.__width):
                 print("#", end="")
                 count += 1
