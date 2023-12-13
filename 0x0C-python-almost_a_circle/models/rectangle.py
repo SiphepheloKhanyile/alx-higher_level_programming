@@ -84,13 +84,19 @@ class Rectangle(Base):
 
     @property
     def y(self):
+        """getter and setter fot y"""
         return (self.__y)
 
     @y.setter
     def y(self, value):
-        """getter and setter fot y"""
         if (isinstance(value, int) is False):
             raise TypeError("y must be an integer")
         if (value < 0):
             raise ValueError("y must be >= 0")
         self.__y = value
+
+    def area(self):
+        """
+        Returns area of Rectangle
+        """
+        return self.__width * self.__length
