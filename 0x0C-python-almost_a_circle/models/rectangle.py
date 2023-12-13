@@ -106,7 +106,7 @@ class Rectangle(Base):
         prints in stdout the Rectangle instance with the char '#'
         """
         y_count = 0
-        while(y_count < self.__y):
+        while (y_count < self.__y):
             print("")
             y_count += 1
         for row in range(0, self.__height):
@@ -128,7 +128,7 @@ class Rectangle(Base):
                 type(self).__name__, self.id, self.__x, self.__y,
                 self.__width, self.__height)
 
-    def update(self, *args):
+    def update(self, *args, **kwargs):
         """
         for updating attributes
         Args:
@@ -138,24 +138,36 @@ class Rectangle(Base):
             args[3] : x
             args[4] : y
         """
-        args_c = len(args)
-        if (args_c == 1):
-            self.id = args[0]
-        elif (args_c == 2):
-            self.id = args[0]
-            self.__width = args[1]
-        elif (args_c == 3):
-            self.id = args[0]
-            self.__width = args[1]
-            self.__height = args[2]
-        elif (args_c == 4):
-            self.id = args[0]
-            self.__width = args[1]
-            self.__height = args[2]
-            self.__x = args[3]
-        elif (args_c >= 5):
-            self.id = args[0]
-            self.__width = args[1]
-            self.__height = args[2]
-            self.__x = args[3]
-            self.__y = args[4]
+        if (len(args) < 1):
+            if ("id" in kwargs.keys()):
+                self.id = kwargs["id"]
+            if ("width" in kwargs.keys()):
+                self.__width = kwargs["width"]
+            if ("height" in kwargs.keys()):
+                self.__height = kwargs["height"]
+            if ("x" in kwargs.keys()):
+                self.__x = kwargs["x"]
+            if ("y" in kwargs.keys()):
+                self.__y = kwargs["y"]
+        else:
+            args_c = len(args)
+            if (args_c == 1):
+                self.id = args[0]
+            elif (args_c == 2):
+                self.id = args[0]
+                self.__width = args[1]
+            elif (args_c == 3):
+                self.id = args[0]
+                self.__width = args[1]
+                self.__height = args[2]
+            elif (args_c == 4):
+                self.id = args[0]
+                self.__width = args[1]
+                self.__height = args[2]
+                self.__x = args[3]
+            elif (args_c >= 5):
+                self.id = args[0]
+                self.__width = args[1]
+                self.__height = args[2]
+                self.__x = args[3]
+                self.__y = args[4]
