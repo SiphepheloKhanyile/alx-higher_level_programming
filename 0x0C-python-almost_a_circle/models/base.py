@@ -30,7 +30,7 @@ class Base:
         """
         returns JSON str representation of list_dictionaries
         """
-        if ((list_dictionaries is None) or (bool(list_dictionaries) is False)):
+        if list_dictionaries is None or bool(list_dictionaries) is False:
             return "[]"
         else:
             json_str_repr = json.dumps(list_dictionaries)
