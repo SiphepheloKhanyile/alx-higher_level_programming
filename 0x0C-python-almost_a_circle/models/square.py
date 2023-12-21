@@ -77,3 +77,15 @@ class Square(Rectangle):
                 self.__height = args[1]
                 self.x = args[2]
                 self.y = args[3]
+
+    def to_dictionary(self):
+        """
+        returns dict represantation of object.
+        """
+        obj_dict = {
+                "id": self.id,
+                "size": self.size,
+                "x": self.x,
+                "y": self.y
+                }
+        return obj_dict
