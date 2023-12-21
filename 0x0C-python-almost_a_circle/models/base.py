@@ -32,5 +32,6 @@ class Base:
         """
         if ((list_dictionaries is None) or (list_dictionaries is "")):
             return "[]"
-        json_str_repr = json.dumps(list_dictionaries)
-        return json_str_repr
+        else:
+            json_str_repr = json.dumps(list_dictionaries)
+            return json_str_repr
