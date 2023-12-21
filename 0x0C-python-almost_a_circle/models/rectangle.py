@@ -171,16 +171,16 @@ class Rectangle(Base):
                 self.__height = args[2]
                 self.__x = args[3]
                 self.__y = args[4]
+
     def to_dictionary(self):
         """
         returns dictionary representation of object
         """
         obj_dict = {
-                "id" : self.id,
-                "width" : self.__width,
-                "height" : self.__height,
-                "x" : self.__x,
-                "y" : self.__y
+                "id": self.id,
+                "width": self.__width,
+                "height": self.__height,
+                "x": self.__x,
+                "y": self.__y
                 }
         return obj_dict
-
