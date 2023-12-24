@@ -35,7 +35,7 @@ class Base:
             JSON string
         """
         if list_dictionaries is None or bool(list_dictionaries) is False:
-            return "[]"
+            return []
         else:
             json_string = json.dumps(list_dictionaries)
             return json_string
@@ -69,6 +69,6 @@ class Base:
             list of JSON str representation
         """
         if json_string is None:
-            return "[]"
+            return []
         str_repr = json.loads(json_string)
         return str_repr
