@@ -82,7 +82,8 @@ class Base:
         """
         if "size" not in dictionary.keys():
             inst = cls(width=dictionary["width"], height=dictionary["height"])
+            inst.update(**dictionary)
         else:
-            inst = cls(size="size")
-        inst.update(**dictionary)
+            inst = cls(size=dictionary["size"])
+            inst.update(**dictionary)
         return inst
