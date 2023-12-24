@@ -72,3 +72,14 @@ class Base:
             return []
         str_repr = json.loads(json_string)
         return str_repr
+
+    @classmethod
+    def create(cls, **dictionary):
+        """
+        returns an instance with all attributes already set
+        Args:
+            dictionary(kwargs)
+        """
+        inst = cls(width=dictionary["width"], height=dictionary["height"])
+        inst.update(**dictionary)
+        return inst
