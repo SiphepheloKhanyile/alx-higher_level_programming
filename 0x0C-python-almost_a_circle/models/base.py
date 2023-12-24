@@ -80,6 +80,9 @@ class Base:
         Args:
             dictionary(kwargs)
         """
-        inst = cls(width=dictionary["width"], height=dictionary["height"])
+        if "size" not in dictionary.keys():
+            inst = cls(width=dictionary["width"], height=dictionary["height"])
+        else:
+            inst = cls(size="size")
         inst.update(**dictionary)
         return inst
