@@ -34,7 +34,7 @@ class Base:
         Return:
             JSON string
         """
-        if list_dictionaries is None or len(list_dictionaries) == 0:
+        if list_dictionaries is None or bool(list_dictionaries) is False:
             return "[]"
         else:
             json_string = json.dumps(list_dictionaries)
@@ -48,10 +48,13 @@ class Base:
             list_objs(list): list of instances who inherits from base
         """
         if list_objs is None:
-            filename = str(type(cls).__name__) + ".json"
-            with open(filname, "w+") as ef:
-                ef.write(list())
-        else:
-            filename = str(type(cls).__name__) + ".json"
-            with open(filename, "w+") as ef:
-                ef.write(cls.to_json_string(list_objs))
+            list_objs = []
+        class_name = cls.__name__
+        filename = "{}.json".format(class_name)
+        list_dictionaries = []
+        for obj in list_objs:
+            dictionary_representation = obj.to_dictionary()
+            list_dictionaries.append(dictionary_representation)
+        json_string = cls.to_json_string(list_dictionaries)
+        with open(filename, "w") as file:
+            file.write(json_string)
