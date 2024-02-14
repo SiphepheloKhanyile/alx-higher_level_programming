@@ -3,8 +3,8 @@ const { argv } = require('node:process');
 
 const arg = argv[2];
 
-if (!isNaN(arg) && Number.isInteger(Number(arg))) {
-  console.log(`My number: ${parseInt(arg)}`);
+if (!isNaN(arg)) {
+  console.log(`My number: ${Number(arg)}`);
 } else {
   console.log('Not a number');
 }
