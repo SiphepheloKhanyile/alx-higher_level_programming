@@ -21,8 +21,8 @@ if __name__ == "__main__":
     )
 
     curs = conn.cursor()
-    curs.execute("SELECT * FROM states WHERE name LIKE \
-        'N%' ORDER BY id ASC;")
+    curs.execute("SELECT * FROM states WHERE name LIKE 'N%' \
+        ORDER BY states.id ASC;")
     rows = curs.fetchall()
     for row in rows:
         print(row)

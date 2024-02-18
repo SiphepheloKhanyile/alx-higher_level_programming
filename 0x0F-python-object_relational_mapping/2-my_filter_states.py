@@ -23,7 +23,8 @@ if __name__ == "__main__":
     )
 
     curs = conn.cursor()
-    curs.execute("SELECT * FROM states WHERE name = %s;", (name_searched,))
+    curs.execute(
+        "SELECT * FROM states WHERE name = '{}'".format(name_searched))
     rows = curs.fetchall()
     for row in rows:
         print(row)
