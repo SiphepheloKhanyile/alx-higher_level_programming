@@ -3,10 +3,15 @@
 a script that lists all states with a name starting with N (upper N)
 from the database hbtn_0e_0_usa
 """
-import sys
-import MySQLdb
 
 if __name__ == "__main__":
+    """
+    Accessing the database and get the states
+    from the database.
+    """
+    import sys
+    import MySQLdb
+
     username = sys.argv[1]
     password = sys.argv[2]
     database = sys.argv[3]
@@ -16,13 +21,14 @@ if __name__ == "__main__":
         user=username,
         passwd=password,
         db=database,
-        port=3306,
-        charset="utf8"
+        port=3306
     )
 
     curs = conn.cursor()
     curs.execute("SELECT * FROM states WHERE name LIKE 'N%' \
-        ORDER BY states.id ASC;")
+        ORDER BY states.id ASC")
     rows = curs.fetchall()
     for row in rows:
         print(row)
+    curs.close()
+    conn.close()
