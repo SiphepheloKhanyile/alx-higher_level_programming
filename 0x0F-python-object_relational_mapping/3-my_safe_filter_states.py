@@ -1,7 +1,9 @@
 #!/usr/bin/python3
 """
-a script that lists all states with a name starting with N (upper N)
-from the database hbtn_0e_0_usa
+a script that takes in an argument
+displays all values in the 'states' table of hbtn_0e_0_usa
+where 'name' matches the argument.
+Safe from MySQL injections.
 """
 
 if __name__ == "__main__":
@@ -11,6 +13,7 @@ if __name__ == "__main__":
     username = sys.argv[1]
     password = sys.argv[2]
     database = sys.argv[3]
+    name_searched = sys.argv[4]
 
     conn = MySQLdb.connect(
         host='localhost',
@@ -21,10 +24,10 @@ if __name__ == "__main__":
     )
 
     curs = conn.cursor()
-    curs.execute("SELECT * FROM states WHERE name LIKE 'N%' \
-        ORDER BY states.id ASC")
+    curs.execute("SELECT * FROM states;")
     rows = curs.fetchall()
     for row in rows:
-        print(row)
+        if name_searched == row[1]:
+            print(row)
     curs.close()
     conn.close()

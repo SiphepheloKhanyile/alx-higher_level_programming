@@ -6,10 +6,6 @@ where 'name' matches the argument.
 """
 
 if __name__ == "__main__":
-    """
-    Accessing the database and get the states
-    from the database.
-    """
     import sys
     import MySQLdb
 
