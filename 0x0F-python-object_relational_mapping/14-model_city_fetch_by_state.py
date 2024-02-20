@@ -20,7 +20,10 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    querry_cities = session.query(City).order_by(City.id).all()
+    querry_cities = session.query(City, State).join(State).order_by(City.id)
 
-    for city in querry_cities:
-        print(f'{city.state.name}: ({city.id}) {city.name}')
+    for city, state in querry_cities:
+        print(f'{state.name}: ({city.id}) {city.name}')
+
+    session.commit()
+    session.close()
