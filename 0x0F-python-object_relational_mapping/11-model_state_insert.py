@@ -22,7 +22,7 @@ if __name__ == "__main__":
     louisiana = State(name="Louisiana")
     session.add(louisiana)
     session.commit()
-
-    query_state = session.query(State).all()
-    for state in query_state:
-        print(f'{state.id}: {state.name}')
+    # state_id = session.query(State).filter(State.name == louisiana.name).all()
+    # for state in state_id:
+    #     print(state.id)
+    print(louisiana.id)
