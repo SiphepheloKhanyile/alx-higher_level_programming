@@ -12,7 +12,6 @@ if __name__ == "__main__":
     db_username = sys.argv[1]
     db_password = sys.argv[2]
     db_name = sys.argv[3]
-    searched_obj = sys.argv[4]
 
     engine = create_engine(
         f'mysql+mysqldb://{db_username}:{db_password}@localhost/{db_name}')
@@ -20,11 +19,10 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
 
     session = Session()
-    query_obj = session.query(State)\
-        .filter(State.name == searched_obj).all()
+    louisiana = State(name="Louisiana")
+    session.add(louisiana)
+    session.commit()
 
-    if query_obj:
-        for item in query_obj:
-            print(item.id)
-    else:
-        print("Not found")
+    query_state = session.query(State).all()
+    for state in query_state:
+        print(f'{state.id}: {state.name}')
