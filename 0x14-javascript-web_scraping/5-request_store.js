@@ -8,15 +8,14 @@ const filePath = process.argv[3];
 
 // Make a GET request to the provided URL
 request.get(url, (error, response, body) => {
-    if (error) {
-        console.error(error);
-        return;
+  if (error) {
+    console.error(error);
+    return;
+  }
+  // Write the response body to the specified file path
+  fs.writeFile(filePath, body, 'utf-8', (err) => {
+    if (err) {
+      console.error(err);
     }
-    // Write the response body to the specified file path
-    fs.writeFile(filePath, body, 'utf-8', (err) => {
-        if (err) {
-            console.error(err);
-            return;
-        }
-    });
+  });
 });
